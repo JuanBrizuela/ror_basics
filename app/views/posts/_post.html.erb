@@ -18,7 +18,9 @@
     <%= post.content %>
   </p>
   <div class= "post-card-actions">
-    <span><%= "#{post.comments.size} comments" %></span>
+    <%= "#{post.comments.size} comments" %>
+    <%= "#{post.likes.size} likes" %>
+    <%= render 'like', record: post %>
   </div>
 </div>
 

@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: %i[ edit update ]
+  resources :likes, only: %i[ create destroy ]
 end
