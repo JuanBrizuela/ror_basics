@@ -1,13 +1,22 @@
 <div class="post-card">
-  <p>
-    <strong>Title:</strong>
-    <%= post.title %>
-  </p>
+  <div class="post-card-header">
+    <div>
+      <strong>Title:</strong>
+      <%= post.title %>
+    </div>
+    <% if post.user.present? %>
+      <p> <%= post.user.display_name %> </p>
+    <% else post.user.present? %>
+      <p> Sinónimo </p>
+    <% end %>
+  </div>
   <p>
     <strong>Content:</strong>
     <%= post.content %>
   </p>
-  <span><%= "#{post.comments.size} comments" %></span>
+  <div class= "post-card-actions">
+    <span><%= "#{post.comments.size} comments" %></span>
+  </div>
 </div>
 
 <% if local_assigns[:include_form].present? %>

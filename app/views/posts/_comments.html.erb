@@ -3,7 +3,13 @@
   <div class="comment-container">
     <%= image_tag 'profile.png' %>
     <div>
-      <strong>Anonymous</strong>
+      <strong>
+        <% if comment.user %>
+          <%= comment.user.display_name %>
+        <% else %>
+          Anónimo
+        <% end %>
+      </strong>
       <p><%= comment.content %></p>
     </div>
   </div>
