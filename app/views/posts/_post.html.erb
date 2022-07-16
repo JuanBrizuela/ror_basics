@@ -5,7 +5,10 @@
       <%= post.title %>
     </div>
     <% if post.user.present? %>
-      <p> <%= post.user.display_name %> </p>
+      <div>
+        <%= image_tag(post.user.profile_picture) if post.user.profile_picture.attached? %>
+        <p style="display: inline; vertical-align: super;"> <%= post.user.display_name %> </p>
+      </div>
     <% else post.user.present? %>
       <p> Sinónimo </p>
     <% end %>

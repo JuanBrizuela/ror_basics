@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_many :posts
   has_many :comments
 
+  has_one_attached :profile_picture
+
   def display_name
     return email.split('@').first unless first_name
 
